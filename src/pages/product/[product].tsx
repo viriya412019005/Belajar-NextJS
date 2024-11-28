@@ -1,10 +1,7 @@
-import { fetcher } from "@/lib/swr/fetcher";
 import { ProductType } from "@/types/product.type";
 import DetailProduct from "@/views/DetailProduct";
-import { useRouter } from "next/router";
-import useSWR from "swr";
 const DetailProductPage = ({ product }: { product: ProductType }) => {
-  const { query } = useRouter();
+  // const { query } = useRouter();
   // console.log("query", query.product);
   // client-side
   // const { data, error, isLoading } = useSWR(
@@ -68,5 +65,6 @@ export async function getStaticProps({
     props: {
       product: response.data,
     },
+    revalidate: 10,
   };
 }

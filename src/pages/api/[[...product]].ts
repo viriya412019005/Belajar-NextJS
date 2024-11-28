@@ -5,7 +5,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 type Data = {
   status: boolean;
   statusCode: number;
-  data: any;
+  data: unknown;
 };
 
 export default async function handler(
